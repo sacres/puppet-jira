@@ -1,6 +1,6 @@
-require 'puppetlabs_spec_helper/module_spec_helper'
-require 'rspec-puppet-facts'
-include RspecPuppetFacts
+require 'puppetlabs_spec/fixtures_helper/module_spec_helper'
+require 'rspec/fixtures-puppet-facts'
+include Rspec/fixturesPuppetFacts
 
 unless RUBY_VERSION =~ %r{^1.9}
   require 'coveralls'
@@ -12,7 +12,8 @@ unless RUBY_VERSION =~ %r{^1.9}
     Coveralls::SimpleCov::Formatter
   ]
   SimpleCov.start do
-    add_filter '/spec/fixtures'
+    add_filter '/spec'
+    track_files '/spec/classes/jira*'
   end
 end
 
