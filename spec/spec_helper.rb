@@ -1,6 +1,6 @@
-require 'puppetlabs_spec/fixtures_helper/module_spec_helper'
-require 'rspec/fixtures-puppet-facts'
-include Rspec/fixturesPuppetFacts
+require 'puppetlabs_spec_helper/module_spec_helper'
+require 'rspec-puppet-facts'
+include RspecPuppetFacts
 
 unless RUBY_VERSION =~ %r{^1.9}
   require 'coveralls'
