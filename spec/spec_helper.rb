@@ -21,7 +21,7 @@ end
 #
 # Require all support files
 #
-Dir['./spec/classes/jira**.rb'].sort.each { |f| require f }
+Dir['./spec/classes/*.rb'].sort.each { |f| require f }
 
 RSpec.configure do |c|
   default_facts = {
@@ -32,5 +32,4 @@ RSpec.configure do |c|
   default_facts.merge!(YAML.load(File.read(File.expand_path('../default_module_facts.yml', __FILE__)))) if File.exist?(File.expand_path('../default_module_facts.yml', __FILE__))
   c.default_facts = default_facts
   c.formatter = 'documentation'
-#  c.mock_framework = :rspec
 end
